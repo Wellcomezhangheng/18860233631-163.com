@@ -1,0 +1,24 @@
+{
+code = 0;
+content = "";
+count = 2;
+data =     (
+{
+channelId = 13474;
+icon = "http://img.zhaoniwan.cn/images/channels/logo.png@160w_160h.png";
+subject = "\U65e0\U8089\U4e0d\U6b22";
+unreaded = 1;
+"update_time" = 1457067157;
+},
+{
+channelId = 1000;
+icon = "http://img.zhaoniwan.cn/images/channels/logo.png@160w_160h.png";
+subject = "\U5403\U8d27\U8bf4\Uff08\U5b98\Uff09";
+unreaded = 0;
+"update_time" = 1456585523;
+}
+);
+hasMore = 0;
+message = "\U64cd\U4f5c\U6210\U529f";
+useCache = 0;
+}

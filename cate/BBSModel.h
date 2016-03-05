@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface BBSModel : NSObject
+//分区标题
+@property (nonatomic, retain)NSString *headName;
+@property (nonatomic, retain)NSString *imagee;
+@property (nonatomic, retain)NSString *subject;
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
 
 @end

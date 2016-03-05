@@ -63,7 +63,7 @@
     
     
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kwidth, 60)];
-    [btn setTitle:@"探索更多吃货社区1" forState:UIControlStateNormal];
+    [btn setTitle:@"探索更多吃货社区" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     [btn addTarget:self action:@selector(chick) forControlEvents:UIControlEventTouchUpInside];

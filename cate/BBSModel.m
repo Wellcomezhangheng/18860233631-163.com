@@ -10,4 +10,13 @@
 
 @implementation BBSModel
 
+- (instancetype)initWithDictionary:(NSDictionary *)dict{
+    self = [super init];
+    if (self) {
+        self.subject = dict[@"subject"];
+        self.imagee = dict[@"background"];
+         self.headName = dict[@"cate_category_name"];
+    }
+    return self;
+}
 @end

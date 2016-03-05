@@ -397,6 +397,8 @@
 		7A0871B11C8875EC0089E107 /* VOIndicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A08719D1C8875EB0089E107 /* VOIndicatorAnimation.m */; };
 		7A0871B21C8875EC0089E107 /* VOSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A08719F1C8875EB0089E107 /* VOSegment.m */; };
 		7A0871B31C8875EC0089E107 /* VOSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0871A11C8875EB0089E107 /* VOSegmentedControl.m */; };
+		7AAF3DE91C8AEE3000DD0F24 /* BBSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF3DE71C8AEE3000DD0F24 /* BBSTableViewCell.m */; };
+		7AAF3DEA1C8AEE3000DD0F24 /* BBSTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAF3DE81C8AEE3000DD0F24 /* BBSTableViewCell.xib */; };
 		7ADC6C3A1C891589001D2DC8 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ADC6C391C891589001D2DC8 /* ic_launcher.png */; };
 		7ADC6C3D1C891A47001D2DC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADC6C3C1C891A46001D2DC8 /* Foundation.framework */; };
 		7ADC6C3F1C893A28001D2DC8 /* HomeTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ADC6C3E1C893A28001D2DC8 /* HomeTheme.plist */; };
@@ -412,8 +414,6 @@
 		7ADC6C8B1C8978BF001D2DC8 /* homeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC6C891C8978BF001D2DC8 /* homeTableViewCell.m */; };
 		7ADC6C8C1C8978BF001D2DC8 /* homeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ADC6C8A1C8978BF001D2DC8 /* homeTableViewCell.xib */; };
 		7ADC6C8F1C89BAFE001D2DC8 /* BBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC6C8E1C89BAFE001D2DC8 /* BBSViewController.m */; };
-		7ADC6C931C89BF6E001D2DC8 /* BBSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC6C911C89BF6E001D2DC8 /* BBSTableViewCell.m */; };
-		7ADC6C941C89BF6E001D2DC8 /* BBSTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ADC6C921C89BF6E001D2DC8 /* BBSTableViewCell.xib */; };
 		7ADC6C971C89BF80001D2DC8 /* BBSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC6C961C89BF80001D2DC8 /* BBSModel.m */; };
 		7ADC6C991C89C1E6001D2DC8 /* BBS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ADC6C981C89C1E6001D2DC8 /* BBS.plist */; };
 		CB1428A452B632750825EC0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E01354470CC7D072E9DFC97 /* libPods.a */; };
@@ -820,6 +820,9 @@
 		7A08719F1C8875EB0089E107 /* VOSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSegment.m; sourceTree = "<group>"; };
 		7A0871A01C8875EB0089E107 /* VOSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOSegmentedControl.h; sourceTree = "<group>"; };
 		7A0871A11C8875EB0089E107 /* VOSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSegmentedControl.m; sourceTree = "<group>"; };
+		7AAF3DE61C8AEE3000DD0F24 /* BBSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSTableViewCell.h; sourceTree = "<group>"; };
+		7AAF3DE71C8AEE3000DD0F24 /* BBSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSTableViewCell.m; sourceTree = "<group>"; };
+		7AAF3DE81C8AEE3000DD0F24 /* BBSTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBSTableViewCell.xib; sourceTree = "<group>"; };
 		7ADC6C391C891589001D2DC8 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		7ADC6C3B1C8919F4001D2DC8 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		7ADC6C3C1C891A46001D2DC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -844,9 +847,6 @@
 		7ADC6C8A1C8978BF001D2DC8 /* homeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = homeTableViewCell.xib; sourceTree = "<group>"; };
 		7ADC6C8D1C89BAFE001D2DC8 /* BBSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSViewController.h; sourceTree = "<group>"; };
 		7ADC6C8E1C89BAFE001D2DC8 /* BBSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSViewController.m; sourceTree = "<group>"; };
-		7ADC6C901C89BF6E001D2DC8 /* BBSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSTableViewCell.h; sourceTree = "<group>"; };
-		7ADC6C911C89BF6E001D2DC8 /* BBSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSTableViewCell.m; sourceTree = "<group>"; };
-		7ADC6C921C89BF6E001D2DC8 /* BBSTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBSTableViewCell.xib; sourceTree = "<group>"; };
 		7ADC6C951C89BF80001D2DC8 /* BBSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSModel.h; sourceTree = "<group>"; };
 		7ADC6C961C89BF80001D2DC8 /* BBSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSModel.m; sourceTree = "<group>"; };
 		7ADC6C981C89C1E6001D2DC8 /* BBS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BBS.plist; sourceTree = "<group>"; };
@@ -909,12 +909,12 @@
 				7ADC6C7C1C8959D2001D2DC8 /* homeModel.m */,
 				7ADC6C8D1C89BAFE001D2DC8 /* BBSViewController.h */,
 				7ADC6C8E1C89BAFE001D2DC8 /* BBSViewController.m */,
-				7ADC6C901C89BF6E001D2DC8 /* BBSTableViewCell.h */,
-				7ADC6C911C89BF6E001D2DC8 /* BBSTableViewCell.m */,
-				7ADC6C921C89BF6E001D2DC8 /* BBSTableViewCell.xib */,
 				7ADC6C951C89BF80001D2DC8 /* BBSModel.h */,
 				7ADC6C961C89BF80001D2DC8 /* BBSModel.m */,
 				7ADC6C3B1C8919F4001D2DC8 /* Header.h */,
+				7AAF3DE61C8AEE3000DD0F24 /* BBSTableViewCell.h */,
+				7AAF3DE71C8AEE3000DD0F24 /* BBSTableViewCell.m */,
+				7AAF3DE81C8AEE3000DD0F24 /* BBSTableViewCell.xib */,
 				7A0869FF1C882BA40089E107 /* Assets.xcassets */,
 				7A086A011C882BA40089E107 /* LaunchScreen.storyboard */,
 				7A086A041C882BA40089E107 /* Info.plist */,
@@ -1713,7 +1713,6 @@
 				7A08700F1C8856530089E107 /* abc_btn_radio_to_on_mtrl_015.png in Resources */,
 				7A0871461C8856530089E107 /* ic_start_match_pressed.png in Resources */,
 				7A0871021C8856530089E107 /* ic_message_item_receive_arrow_normal.png in Resources */,
-				7ADC6C941C89BF6E001D2DC8 /* BBSTableViewCell.xib in Resources */,
 				7A08715F1C8856530089E107 /* ic_wechat_login_normal.png in Resources */,
 				7A08716B1C8856530089E107 /* ic_wish_dine_bg_pressed.9.png in Resources */,
 				7A0871671C8856530089E107 /* youjiantou.png in Resources */,
@@ -1844,6 +1843,7 @@
 				7A08714C1C8856530089E107 /* ic_tab_follow_normal.png in Resources */,
 				7A0870481C8856530089E107 /* facethumb_hanxiao.png in Resources */,
 				7A0871011C8856530089E107 /* ic_message_fans.png in Resources */,
+				7AAF3DEA1C8AEE3000DD0F24 /* BBSTableViewCell.xib in Resources */,
 				7A0871761C8856530089E107 /* message.png in Resources */,
 				7A0870BD1C8856530089E107 /* ic_image_channel.png in Resources */,
 				7A0870391C8856530089E107 /* default_check.png in Resources */,
@@ -1915,9 +1915,9 @@
 				7ADC6C861C896050001D2DC8 /* messageViewController.m in Sources */,
 				7A0869FB1C882BA40089E107 /* main.m in Sources */,
 				7A0871B01C8875EC0089E107 /* VOContentLayer.m in Sources */,
+				7AAF3DE91C8AEE3000DD0F24 /* BBSTableViewCell.m in Sources */,
 				7ADC6C8B1C8978BF001D2DC8 /* homeTableViewCell.m in Sources */,
 				7ADC6C7A1C893E63001D2DC8 /* PullingRefreshTableView.m in Sources */,
-				7ADC6C931C89BF6E001D2DC8 /* BBSTableViewCell.m in Sources */,
 				7A086A0C1C882BBA0089E107 /* homeViewController.m in Sources */,
 				7ADC6C771C893E63001D2DC8 /* ProgressHUD.m in Sources */,
 				7ADC6C971C89BF80001D2DC8 /* BBSModel.m in Sources */,

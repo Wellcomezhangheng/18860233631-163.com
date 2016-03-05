@@ -11,10 +11,16 @@
 #import "Header.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #define kBBS @"http://apis.znw.me/index.php/Channel/newIndex230/mid/1294487/gps/112.426815%2C34.6186/appid/3/cityCode/0379/mk/4406fd692c2b9d550ef7e807c601c503"
-@interface BBSViewController ()
+#import "PullingRefreshTableView.h"
+#import "BBSTableViewCell.h"
+#import "BBSModel.h"
+@interface BBSViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)VOSegmentedControl *segementedControl;
 @property (nonatomic, strong)NSMutableArray *headArray;
 @property (nonatomic, strong)NSMutableArray *activityArray;
+@property (nonatomic, strong)NSMutableArray *subjectArray;
+@property (nonatomic, strong)UITableView *tableView;
+
 @end
 
 @implementation BBSViewController
@@ -22,36 +28,102 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view addSubview:self.segementedControl];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, kwidth, kheight) style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = 210;
+  [self.view addSubview:self.tableView];
     [self oneWork];
+   
+    [self.tableView registerNib:[UINib nibWithNibName:@"BBSTableViewCell" bundle:nil]   forCellReuseIdentifier:@"cell"];
+    [self.view addSubview:self.segementedControl];
+    
+   
 }
 - (void)oneWork{
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     [manger GET:kBBS parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-       
+        
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
         NSString *message = dic[@"message"];
         NSArray *data = dic[@"data"];
         if ([message isEqualToString:@"操作成功"]) {
-            for (NSDictionary *dict in data) {
+                       for (NSDictionary *dict in data) {
+                //每个分区标题
                 [self.headArray addObject:dict[@"cate_category_name"]];
-                ZHLog(@"%@",self.headArray);
-                for (NSDictionary *dictt  in dict[@"channels"]) {
-                    [self.activityArray addObject:dictt[@"icon"]];
-                                    }
+                
+              for (NSDictionary *dictt  in dict[@"channels"]) {
+                    BBSModel *model1 = [[BBSModel alloc] initWithDictionary:dictt];
+                    [self.activityArray addObject:model1];
+                                    
+              }
+                
+[self.tableView reloadData];
             }
-
             
-
-        }
-        
-        
+           
+                   }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         ZHLog(@"eeeeeeeeee=%@",error);
     }];
 }
+- (NSMutableArray *)headArray{
+    if (_headArray == nil) {
+        self.headArray = [NSMutableArray new];
+    }
+    return _headArray;
+}
+- (NSMutableArray *)activityArray{
+    if (_activityArray == nil) {
+        self.activityArray = [NSMutableArray new];
+    }
+    return _activityArray;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    BBSTableViewCell *BBScell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+
+    BBScell.model = self.activityArray[indexPath.row];
+    
+    return BBScell;
+    
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+  
+    return self.activityArray.count;
+    
+  
+}
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kwidth, 50)];
+//    if (section == 0) {
+//        
+//        UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 200, 40)];
+//        lable.text = @"ndsss";
+//        [view1 addSubview:lable];
+//    }
+//    
+//    return view1;
+//}
+
+
+
+
+
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    UIView *abView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
+//    abView.backgroundColor=[UIColor redColor];
+//    
+//    UILabel *lable=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
+//    lable.text=self.headArray[section];
+//    ZHLog(@"%@",lable.text);
+//    [abView addSubview:lable];
+//    return abView;
+//}
+
 
 - (VOSegmentedControl *)segementedControl{
     if (_segementedControl == nil) {
@@ -71,18 +143,7 @@
     }
     return _segementedControl;
 }
-- (NSMutableArray *)headArray{
-    if (_headArray == nil) {
-        self.headArray = [[NSMutableArray alloc] init];
-    }
-    return _headArray;
-}
-- (NSMutableArray *)activityArray{
-    if (_activityArray == nil) {
-        self.activityArray = [[NSMutableArray alloc] init];
-    }
-    return _activityArray;
-}
+
 - (void)segmentCtrlValuechange: (VOSegmentedControl *)segmentCtrl{
     NSInteger index = segmentCtrl.selectedSegmentIndex;
     switch (index) {

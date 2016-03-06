@@ -5,7 +5,7 @@
 //  Created by scjy on 16/3/4.
 //  Copyright © 2016年 张衡. All rights reserved.
 //
-
+#import "BBSSecondViewController.h"
 #import "BBSViewController.h"
 #import "VOSegmentedControl.h"
 #import "Header.h"
@@ -69,6 +69,7 @@
         ZHLog(@"eeeeeeeeee=%@",error);
     }];
 }
+
 - (NSMutableArray *)headArray{
     if (_headArray == nil) {
         self.headArray = [NSMutableArray new];
@@ -95,6 +96,21 @@
     return self.activityArray.count;
     
   
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    BBSModel *model = self.activityArray[indexPath.row];
+    UIStoryboard *BBSs = [UIStoryboard storyboardWithName:@"BBSsecond" bundle:nil];
+    
+    BBSSecondViewController *bbs = BBSs.instantiateInitialViewController;
+    bbs.channelid = model.channelId;
+    bbs.imagee = model.imagee;
+    [self.navigationController pushViewController:bbs animated:YES];
+ 
+ 
+    
+    
+    
 }
 //- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
 //    UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kwidth, 50)];

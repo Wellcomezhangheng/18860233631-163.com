@@ -16,6 +16,7 @@
         self.subject = dict[@"subject"];
         self.imagee = dict[@"background"];
          self.headName = dict[@"cate_category_name"];
+        self.channelId = dict[@"channelId"];
     }
     return self;
 }

@@ -1,0 +1,108 @@
+{
+	code = 0;
+	content = "";
+	count = 1;
+	data = (
+		{
+			"_id" = "55cc682708a87274665126bf";
+			adminUids = (
+				1089485,
+			);
+			adminUsers = ();
+			admins = (
+				{
+					role = owner;
+					uid = 1089485;
+				},
+			);
+			tags = (
+				{
+					tag = "\U8089\U98df\U8005";
+					tagId = 788;
+				},
+				{
+					tag = "\U65e0\U8089\U600e\U4e48\U6b22";
+					tagId = 1171;
+				},
+				{
+					tag = "\U5404\U79cd\U8089";
+					tagId = 1172;
+				},
+				{
+					tag = "\U9e21\U540c\U9e2d\U8bb2";
+					tagId = 1173;
+				},
+				{
+					tag = "\U51cf\U80a5\U662f\U573a\U6301\U4e45\U6218";
+					tagId = 1174;
+				},
+			);
+			background = "http://img.zhaoniwan.cn/channel/13474/13474/1439459417157.jpg@700w_400h_20-10bl.webp";
+			"cate_category" = boy;
+			category = cate;
+			"category_name" = "\U7f8e\U98df";
+			channelId = 13474;
+			cityCode = 860000;
+			"creat_route" = normal;
+			ctime = 1439459367;
+			defBack = 11;
+			des = "\U5916\U8868\U4f18\U96c5\U7684\U4f60\Uff0c\U5185\U5fc3\U4f4f\U7740\U4e00\U4e2a\U7231\U5403\U8089\U7684\U8d2a\U5403\U9b3c\Uff1f";
+			filter = {
+				order = (
+					{
+						name = "\U6700\U65b0";
+						type = new;
+					},
+					{
+						name = "\U6700\U70ed";
+						type = heat;
+					},
+					{
+						name = "\U9644\U8fd1";
+						type = dis;
+					},
+				);
+				region = (
+					{
+						name = "\U5168\U90e8";
+						type = all;
+					},
+					{
+						name = "\U540c\U57ce";
+						type = local;
+					},
+					{
+						name = "\U5176\U4ed6";
+						type = other;
+					},
+				);
+			};
+			"follower_count" = 814;
+			gender = 1;
+			gpsSetting = 0;
+			icon = "http://img.zhaoniwan.cn/images/channels/logo.png@160w_160h.png";
+			isDel = 0;
+			"moment_count" = 126;
+			moreFilter = 1;
+			official = 0;
+			owner = {
+				avatar = "54d7c2c280af7.jpg";
+				birthday = 839856930;
+				gender = 0;
+				name = "\U738b\U6f47\U701a";
+				uid = 1089485;
+			};
+			recommend = 1;
+			region = "\U5168\U56fd";
+			role = "";
+			shareLink = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0a83ad111c44a869&redirect_uri=http%3A%2F%2Fwww.znw.me%2Findex.php%2FWeChat%2Fchannel%3FisWeb%3D1%26channelId%3D13474%26&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+			simpleShareLink = "http://www.znw.me/index.php/WeChat/channel?isWeb=1&channelId=13474";
+			subject = "\U65e0\U8089\U4e0d\U6b22";
+			uid = 1089485;
+			"update_time" = 1457067157;
+		},
+	);
+	hasMore = 0;
+	message = "\U64cd\U4f5c\U6210\U529f";
+	useCache = 0;
+}

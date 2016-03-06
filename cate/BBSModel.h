@@ -13,6 +13,7 @@
 @property (nonatomic, retain)NSString *headName;
 @property (nonatomic, retain)NSString *imagee;
 @property (nonatomic, retain)NSString *subject;
+@property (nonatomic, retain)NSString *channelId;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 
 @end

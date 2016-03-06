@@ -82,12 +82,10 @@
     cell.model = _array[indexPath.row];
     return cell;
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
    
-    return 2;
+    return self.array.count;
    
 }
 

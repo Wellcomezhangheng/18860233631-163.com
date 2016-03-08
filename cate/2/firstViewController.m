@@ -1,65 +1,83 @@
 //
-//  friendViewController.m
+//  firstViewController.m
 //  cate
 //
-//  Created by scjy on 16/3/3.
+//  Created by scjy on 16/3/8.
 //  Copyright © 2016年 张衡. All rights reserved.
 //
 
-#import "friendViewController.h"
-#import "friendTableViewCell.h"
+#import "firstViewController.h"
+#import "BBSSecondViewController.h"
 #import "Header.h"
-#import "friendTableViewCell.h"
+#import "BBSTableViewCell.h"
+#import "BBSModel.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
-@interface friendViewController ()<UITableViewDataSource,UITableViewDelegate>
+#define kBBS @"http://apis.znw.me/index.php/Channel/newIndex230/mid/1294487/gps/112.426815%2C34.6186/appid/3/cityCode/0379/mk/4406fd692c2b9d550ef7e807c601c503"
+@interface firstViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong)NSMutableArray *headArray;
 @property (nonatomic, strong)NSMutableArray *activityArray;
-
 @property (nonatomic, strong)UITableView *tableView;
+@property(nonatomic, assign) BOOL refreshing;
+@property (nonatomic, assign)NSInteger index;
+
 
 @end
 
-@implementation friendViewController
+@implementation firstViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
     [self oneWork];
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kwidth, kheight) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 210;
-    
+   
     [self.view addSubview:self.tableView];
-    [self.tableView registerNib:[UINib nibWithNibName:@"friendTableViewCell" bundle:nil]   forCellReuseIdentifier:@"cell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"BBSTableViewCell" bundle:nil]   forCellReuseIdentifier:@"cell"];
     
+   
 }
 - (void)oneWork{
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
-    [manger POST:@"http://apis.znw.me/index.php/Event/explodeEvent/?" parameters:@{@"mid":@"1294487",@"cityCode":@"0379",@"appid":@"3",@"mk":@"4406fd692c2b9d550ef7e807c601c503",@"city":@"%E6%B4%9B%E9%98%B3%E5%B8%82"} progress:^(NSProgress * _Nonnull uploadProgress) {
-//        ZHLog(@"%@",uploadProgress);
+    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    //     [ProgressHUD show:@"拼命加载中…"];
+    [manger GET:kBBS parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        ZHLog(@"%@",responseObject);
+        //        [ProgressHUD showSuccess:@"加载成功！"];
+        
         NSDictionary *dic = responseObject;
         NSString *message = dic[@"message"];
         NSArray *data = dic[@"data"];
+        if (_refreshing) {
+            if (self.headArray.count > 0) {
+                [self.headArray removeAllObjects];
+            }
+        }
         if ([message isEqualToString:@"操作成功"]) {
-            for (NSDictionary *dict in data){
-                NSArray *recommend = dict[@"recommend"];
-                for (NSDictionary *dic1 in recommend) {
-                    friendModel *model = [[friendModel alloc] initWithDictionary:dic1];
-                    [self.activityArray addObject:model];
+            for (NSDictionary *dict in data) {
+                //每个分区标题
+                [self.headArray addObject:dict[@"cate_category_name"]];
+                
+                for (NSDictionary *dictt  in dict[@"channels"]) {
+                    
+                    BBSModel *model1 = [[BBSModel alloc] initWithDictionary:dictt];
+                    [self.activityArray addObject:model1];
+                    
+                    
                 }
+                
                 [self.tableView reloadData];
             }
-        
-                }
+            
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        ZHLog(@"%@",error);
+        ZHLog(@"eeeeeeeeee=%@",error);
     }];
-    
 }
 - (NSMutableArray *)headArray{
     if (_headArray == nil) {
@@ -76,27 +94,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    friendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.model = self.activityArray[indexPath.row];
-    return cell;
+        BBSTableViewCell *BBScell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        BBScell.model = self.activityArray[indexPath.row];
+        return BBScell;
     
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    return self.activityArray.count;
+   
+        return self.activityArray.count;
     
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//    BBSModel *model = self.activityArray[indexPath.row];
-//    UIStoryboard *BBSs = [UIStoryboard storyboardWithName:@"BBSsecond" bundle:nil];
-//    
-//    BBSSecondViewController *bbs = BBSs.instantiateInitialViewController;
-//    bbs.channelid = model.channelId;
-//    //    bbs.imagee = model.imagee;
-//    [self.navigationController pushViewController:bbs animated:YES];
+    
+    BBSModel *model = self.activityArray[indexPath.row];
+    UIStoryboard *BBSs = [UIStoryboard storyboardWithName:@"BBSsecond" bundle:nil];
+    
+    BBSSecondViewController *bbs = BBSs.instantiateInitialViewController;
+    bbs.channelid = model.channelId;
+    //    bbs.imagee = model.imagee;
+    [self.navigationController pushViewController:bbs animated:YES];
     
     
     
@@ -106,17 +124,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-
-    return 1;
+        return self.headArray.count;
+  
     
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    NSString *str = @"推荐活动";
-    return str;
-}
+   
+        return self.headArray[section];
+    }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    
-    return 40;
+  
+        return 40;
     
 }
 

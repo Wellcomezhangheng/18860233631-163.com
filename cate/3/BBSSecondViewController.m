@@ -13,6 +13,8 @@
 #import <UIImageView+WebCache.h>
 #import "BBSSecondTableViewCell.h"
 #import "VOSegmentedControl.h"
+#import "PersonViewController.h"
+#import "dynamicViewController.h"
 @interface BBSSecondViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) VOSegmentedControl *segementedControl;
 @property (nonatomic, strong) VOSegmentedControl *segementedControl1;
@@ -60,18 +62,28 @@
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    UIStoryboard *dyn = [UIStoryboard storyboardWithName:@"dynamic" bundle:nil];
+//    BBSSecondModel *model = self.allarray[indexPath.section][indexPath.row];
+//    dynamicViewController *dVC = [[dynamicViewController alloc] init];
+//    dVC.momentId = model.momentId;
+////    
+//    [self.navigationController pushViewController:dVC animated:YES];
+//    
+    
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSMutableArray *group = self.allarray[indexPath.section];
     BBSSecondModel *model1 = group[indexPath.row];
     CGFloat cellHeight = [BBSSecondTableViewCell getCellHeightWithModel:model1];
     return cellHeight;
 }
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 200, kwidth, 100)];
-    [view1 addSubview:self.segementedControl];
-    [view1 addSubview:self.segementedControl1];
-    return view1;
-}
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 200, kwidth, 100)];
+//    [view1 addSubview:self.segementedControl];
+//    [view1 addSubview:self.segementedControl1];
+//    return view1;
+//}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }

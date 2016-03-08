@@ -36,7 +36,6 @@
     
     self.textLable.text = model.text;
 
-    ZHLog(@"%.f",self.textLable.frame.size.height);
     NSString *ima = model.large;
     NSString *ima2 = [ima stringByReplacingOccurrencesOfString:@"webp" withString:@"png"];
     [self.largeImage sd_setImageWithURL:[NSURL URLWithString:ima2] placeholderImage:nil];

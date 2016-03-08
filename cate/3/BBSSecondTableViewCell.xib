@@ -39,8 +39,8 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="largeImage" destination="0iQ-Tf-HIM" id="jv6-79-7E9"/>
-                <outlet property="nameLable" destination="vI9-wb-iCR" id="dB3-Ux-Z2q"/>
+                <outlet property="largeImage" destination="0iQ-Tf-HIM" id="r1k-XH-Znb"/>
+                <outlet property="nameLable" destination="vI9-wb-iCR" id="NlH-k4-0YA"/>
             </connections>
             <point key="canvasLocation" x="360" y="411"/>
         </tableViewCell>

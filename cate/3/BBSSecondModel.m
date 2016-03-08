@@ -24,7 +24,7 @@
         NSDictionary *dic2 = arr1[0];
         self.large = dic2[@"large"];
 //        NSLog(@"%@",self.large);
-        
+        self.momentId = dict[@"momentId"];
     }
     return self;
 }

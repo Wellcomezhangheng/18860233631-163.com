@@ -7,7 +7,9 @@
 //
 
 #import "PersonViewController.h"
-
+#import <AFNetworking/AFHTTPSessionManager.h>
+#import "Header.h"
+#define kPerson @"http://apis.znw.me/index.php/User/userinfo/?uid=1294899&mtime=1457407479&mid=1294487&appid=3&mk=4406fd692c2b9d550ef7e807c601c503"
 @interface PersonViewController ()
 
 @end
@@ -18,6 +20,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor brownColor];
+    [self getOneModel];
+}
+- (void)getOneModel{
+    AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
+    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    [manger GET:kPerson parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        ZHLog(@"downloadProgress=%@",downloadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ZHLog(@"responseObject=%@",responseObject);
+        
+        
+//        NSDictionary *dic = responseObject;
+//        NSString *message = dic[@"message"];
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        ZHLog(@"error = %@",error);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

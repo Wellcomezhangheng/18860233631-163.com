@@ -12,6 +12,7 @@
 @property (nonatomic, retain) NSString *large;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *text;
+@property (nonatomic, retain) NSString *momentId;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 
 @end

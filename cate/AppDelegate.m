@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 #import "homeViewController.h"
 #import "friendViewController.h"
 #import "messageViewController.h"
@@ -31,7 +32,7 @@
     friendViewController *friend = [[friendViewController alloc] init];
     UINavigationController *friendNVC = [[UINavigationController alloc] initWithRootViewController:friend];
     friend.navigationItem.title = @"朋友";
-    friendNVC.tabBarItem.title = @"朋友";
+    friendNVC.tabBarItem.title = @"朋友                                                                                                                                                                    ";
     friendNVC.tabBarItem.image = [UIImage imageNamed:@"friend.png"];
     
     messageViewController *message = [[messageViewController alloc] init];

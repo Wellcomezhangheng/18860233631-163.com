@@ -1,0 +1,83 @@
+{
+code = 0;
+content = "";
+count = 1;
+data =     (
+{
+address = "\U6d1b\U9633 \U5043\U5e08 \U6d1b\U9633\U5043\U5e08\U5546\U90fd\U6587\U5316\U5e7f\U573a";
+"begin_time" = "2016-01-07 08:30:00";
+"can_invite" = no;
+category = salon;
+"category_name" = "\U8bb2\U5ea7";
+channelId = 11672;
+content = "\U4e0d\U8981\U4ee5\U4e3a\U6c99\U753b\U53ea\U662f\U4e00\U79cd\U821e\U53f0\U8868\U6f14\Uff0c\U5176\U5b9e\U5b83\U79bb\U6211\U4eec\U7684\U751f\U6d3b\U5e76\U4e0d\U9065\U8fdc\Uff0c\U53ea\U8981\U4f60\U6709\U521b\U610f\Uff0c\U53ea\U8981\U4f60\U6709\U4fe1\U5fc3\Uff0c\U4f60\U4e5f\U53ef\U4ee5\U6210\U4e3a\U4e00\U540d\U6c99\U753b\U5927\U5e08\U3002\U8fd9\U4e0d\Uff0c\U6211\U4eec\U53ef\U4ee5\U4e00\U8d77\U53bb\U6f2b\U5929\U98de\U6c99\U5427\Uff01
+\n
+\n
+\n\U6bcf\U4eba\U9650\U4e00\U6b21\U4f53\U9a8c\U8bfe\U54e6
+\n\U63d0\U524d\U8ba2\U597d\U3002 \U60f3\U53c2\U52a0 \U5c31\U6293\U7d27\U8c46\U74e3\U62a5\U540d\U5427
+\n
+\n\U8054\U7cfb\U5fae\U4fe1sdshwx \Uff0c\U5173\U6ce8\U5fae\U4fe1\U540e\U56de\U590d\U201c\U8c46\U74e3\U6d3b\U52a8\U201d\U67e5\U770b\U6d3b\U52a8
+\n
+\n\U5fae\U535a\Uff1a@\U89c6\U5178\U6c99\U753b
+\nhttp://weibo.com/shahua
+\n\U5fae\U535a\U9700\U8981@ \U4e94\U4f4d\U597d\U53cb\Uff0c\U4f18\U5148\U53c2\U52a0
+\n\U5b98\U65b9\U7f51\U7ad9\Uff1ahttp://www.shahua.com.cn";
+ctime = 1452201531;
+"end_time" = "2016-04-04 17:30:00";
+etime = 1459762200;
+eventId = 4138267;
+expired = 0;
+geo = "34.724171 112.774513";
+gps =             (
+"112.774513",
+"34.724171"
+);
+"has_ticket" = 0;
+heat = 14;
+id = 26120864;
+identityOpen = 0;
+image = "http://img3.doubanio.com/view/event_poster/median/public/6b7849de3c16318.jpg";
+"image_hlarge" = "http://img3.douban.com/view/event_poster/hlarge/public/e538c5fd5044b34.jpg";
+"image_lmobile" = "http://img3.doubanio.com/view/event_poster/lmobile/public/6b7849de3c16318.jpg";
+"image_middle" = "http://img3.doubanio.com/view/event_poster/large/public/6b7849de3c16318.jpg";
+isDel = 0;
+joinStatus = 0;
+linkinfo =             {
+image = "http://img3.doubanio.com/view/event_poster/median/public/6b7849de3c16318.jpg";
+title = "\U3010\U6d1b\U9633\U6c99\U753b\U3011\U89c6\U5178\U6c99\U753b\U8ba9\U60a8\U514d\U8d39\U4f53\U9a8c\U6c99\U753b\U7684\U9b45\U529b\Uff01";
+};
+"loc_id" = 118239;
+"loc_name" = "\U6d1b\U9633";
+mtime = 1457471957;
+owner =             {
+alt = "http://www.douban.com/people/qqyy114/";
+avatar = "http://img3.douban.com/icon/u40129914-4.jpg";
+id = 40129914;
+"is_banned" = 0;
+"is_suicide" = 0;
+"large_avatar" = "http://img3.douban.com/icon/up40129914-4.jpg";
+name = "\U89c6\U5178\U6c99\U753b";
+type = user;
+uid = qqyy114;
+};
+pairDes = "\U627e\U5230\U60f3\U548c\U4f60\U4e00\U8d77\U7684Ta";
+pairedCount = 6;
+pairingCount = 14;
+"participant_count" = 2;
+reStartFlag = 1458122808;
+recommend = 0;
+selfPaired = 0;
+shareLink = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0a83ad111c44a869&redirect_uri=http%3A%2F%2Fwww.znw.me%2Findex.php%2FWeChat%2FeventInfo%3Fsource%3Ddouban%26sourceId%3D26120864%26fromUid%3D1294487%26&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+source = douban;
+stime = 1452126600;
+stopFlag = 1457780796;
+title = "\U3010\U6d1b\U9633\U6c99\U753b\U3011\U89c6\U5178\U6c99\U753b\U8ba9\U60a8\U514d\U8d39\U4f53\U9a8c\U6c99\U753b\U7684\U9b45\U529b\Uff01";
+webOnly = 0;
+week = 201610;
+"wisher_count" = 14;
+}
+);
+hasMore = 0;
+message = "\U64cd\U4f5c\U6210\U529f";
+useCache = 0;
+}

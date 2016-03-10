@@ -11,4 +11,6 @@
 #define kwidth [UIScreen mainScreen].bounds.size.width
 #define kheight [UIScreen mainScreen].bounds.size.height
 #	define ZHLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#define kAppKey @"1877028371"
+#define kRedirectURL @"https://api.weibo.com/oauth2/default.html"
 #endif /* Header_h */

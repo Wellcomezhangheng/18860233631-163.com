@@ -42,7 +42,7 @@
     _pageCount = 1;
     
     [self.tableView launchRefreshing];
-    self.tabBarController.tabBar.hidden = YES;
+//    self.tabBarController.tabBar.hidden = YES;
 
 }
 //在页面将要消失的时候，调用此方法，去掉所有的

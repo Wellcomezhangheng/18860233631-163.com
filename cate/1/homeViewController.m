@@ -13,7 +13,7 @@
 #import "homeTableViewCell.h"
 #import "PullingRefreshTableView.h"
 #import "homeModel.h"
-#import "Header.h"
+//#import "Header.h"
 #import "BBSSecondViewController.h"
 #import "JRSegmentViewController.h"
 #import "firstViewController.h"
@@ -200,18 +200,28 @@
      [self getOneModel];
 //    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 104, kwidth, kheight) style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.segementedControl];
+
 }
 - (void)second{
   
-    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kwidth, 200)];
-    lable.text = @"sa5s4a5s4a5";
-    [self.view1 addSubview:lable];
-    [self.view addSubview:self.view1];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, kwidth, kheight-144)];
+    imageView.image = [UIImage imageNamed:@"geren.png"];
     
+    
+    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, kheight-144, kwidth, 44)];
+    lable.text = @"sorry,您暂时还没有数据";
+    lable.textAlignment = NSTextAlignmentCenter;
+    
+    [imageView addSubview:lable];
+    [self.view1 addSubview:imageView];
+    [self.view addSubview:self.view1];
+    [self.view addSubview:self.segementedControl];
+
 }
 - (UITableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 104, kwidth, kheight) style:UITableViewStylePlain];
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, kwidth, kheight) style:UITableViewStylePlain];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         
@@ -223,7 +233,7 @@
 }
 - (UIView *)view1{
     if (_view1 == nil) {
-        self.view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 104, kwidth, kheight)];
+        self.view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 44, kwidth, kheight)];
         
     }
     return _view1;

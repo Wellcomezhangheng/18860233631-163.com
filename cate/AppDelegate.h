@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class loginViewController;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
 @property (strong, nonatomic) UIWindow *window;
 
 

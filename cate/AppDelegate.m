@@ -12,14 +12,21 @@
 #import "friendViewController.h"
 #import "messageViewController.h"
 #import "mineViewController.h"
-@interface AppDelegate ()<UITabBarControllerDelegate>
+#import "WeiboSDK.h"
+#import "loginViewController.h"
+@interface AppDelegate ()<UITabBarControllerDelegate,WeiboSDKDelegate>
 
 @end
 
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:kAppKey];
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     UITabBarController *tabBarVC = [[UITabBarController alloc] init];
@@ -27,26 +34,36 @@
     UINavigationController *homeNVC = [[UINavigationController alloc] initWithRootViewController:home];
     home.navigationItem.title = @"首页";
     homeNVC.tabBarItem.title = @"首页";
-    homeNVC.tabBarItem.image = [UIImage imageNamed:@"home.png"];
+    homeNVC.tabBarItem.image = [UIImage imageNamed:@"1"];
+    UIImage *homeImage = [UIImage imageNamed:@"2.png"];
+    homeNVC.tabBarItem.selectedImage = [homeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     friendViewController *friend = [[friendViewController alloc] init];
     UINavigationController *friendNVC = [[UINavigationController alloc] initWithRootViewController:friend];
-    friend.navigationItem.title = @"朋友";
-    friendNVC.tabBarItem.title = @"朋友                                                                                                                                                                    ";
-    friendNVC.tabBarItem.image = [UIImage imageNamed:@"friend.png"];
+    friend.navigationItem.title = @"发现";
+   friendNVC.tabBarItem.title = @"发现";
+//    [friendNVC.tabBarItem setTitlePositionAdjustment:UIOffsetMake(100, 0)];
     
-    messageViewController *message = [[messageViewController alloc] init];
-    UINavigationController *messageNVC = [[UINavigationController alloc] initWithRootViewController:message];
-    message.navigationItem.title = @"消息";
+    friendNVC.tabBarItem.image = [UIImage imageNamed:@"faxian2.png"];
+    
+    
+    UIStoryboard *messageSB = [UIStoryboard storyboardWithName:@"message" bundle:nil];
+   
+    UINavigationController *messageNVC = messageSB.instantiateInitialViewController;
+//    messageSB.navigationItem.title = @"消息";
     messageNVC.tabBarItem.title = @"消息";
-    messageNVC.tabBarItem.image = [UIImage imageNamed:@"message.png"];
+    messageNVC.tabBarItem.image = [UIImage imageNamed:@"5.png"];
+    UIImage *messageImage = [UIImage imageNamed:@"6.png"];
+    messageNVC.tabBarItem.selectedImage = [messageImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    mineViewController *mine = [[mineViewController alloc] init];
-    UINavigationController *mineNVC = [[UINavigationController alloc] initWithRootViewController:mine];
-    mine.navigationItem.title = @"我的";
+    UIStoryboard *mineSB = [UIStoryboard storyboardWithName:@"mine" bundle:nil];
+    
+    UINavigationController *mineNVC = mineSB.instantiateInitialViewController;
+    
     mineNVC.tabBarItem.title = @"我的";
-    mineNVC.tabBarItem.image = [UIImage imageNamed:@"mine.png"];
-
+    mineNVC.tabBarItem.image = [UIImage imageNamed:@"7.png"];
+    UIImage *mineImage = [UIImage imageNamed:@"8.png"];
+    mineNVC.tabBarItem.selectedImage = [mineImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     tabBarVC.viewControllers=@[homeNVC,friendNVC,messageNVC,mineNVC];
     tabBarVC.delegate = self;
     tabBarVC.tabBar.tintColor=[UIColor redColor];
@@ -57,6 +74,28 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
+    }
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request{
+    
+}
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//{
+//    return [TencentOAuth HandleOpenURL:url] || [WeiboSDK handleOpenURL:url delegate:self];
+//}
+//
+//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+//{
+//    return [TencentOAuth HandleOpenURL:url] || [WeiboSDK handleOpenURL:url delegate:self];
+//}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

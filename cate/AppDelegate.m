@@ -12,19 +12,28 @@
 #import "friendViewController.h"
 #import "messageViewController.h"
 #import "mineViewController.h"
-#import "WeiboSDK.h"
 #import "loginViewController.h"
-@interface AppDelegate ()<UITabBarControllerDelegate,WeiboSDKDelegate>
+#import "WeiboSDK.h"
+#import <BmobSDK/Bmob.h>
+@interface WBBaseRequest ()
+- (void)debugPrint;
+@end
+
+@interface WBBaseResponse ()
+- (void)debugPrint;
+@end
+@interface AppDelegate ()<UITabBarControllerDelegate,WeiboSDKDelegate,WBHttpRequestDelegate>
 
 @end
 
 @implementation AppDelegate
-
+@synthesize wbtoken;
+@synthesize wbCurrentUserID;
+@synthesize wbRefreshToken;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [WeiboSDK enableDebugMode:YES];
-    [WeiboSDK registerApp:kAppKey];
+   
     
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -72,19 +81,14 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    return YES;
-}
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    return [WeiboSDK handleOpenURL:url delegate:self];
-}
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    return [WeiboSDK handleOpenURL:url delegate:self];
-}
-- (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
-    }
-- (void)didReceiveWeiboRequest:(WBBaseRequest *)request{
     
+    
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:kAppKey];
+    [Bmob registerWithAppKey:kBmob];
+        return YES;
 }
+
 //- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 //{
 //    return [TencentOAuth HandleOpenURL:url] || [WeiboSDK handleOpenURL:url delegate:self];
@@ -117,6 +121,28 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request
+{
+    
+    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [WeiboSDK logOutWithToken:myDelegate.wbtoken delegate:self withTag:@"user1"];
+}
+
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
+    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [WeiboSDK logOutWithToken:myDelegate.wbtoken delegate:self withTag:@"user1"];
+    
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [WeiboSDK handleOpenURL:url delegate:self ];
 }
 
 @end

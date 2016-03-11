@@ -8,7 +8,7 @@
 
 #import "phoneViewController.h"
 #import "ProgressHUD.h"
-#import <BmobSDK/Bmob.h>
+//#import <BmobSDK/Bmob.h>
 //#import <BmobMessageSDK/Bmob.h>
 @interface phoneViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneText;
@@ -20,21 +20,21 @@
 
 @implementation phoneViewController
 - (IBAction)registerUser:(id)sender {
-    BmobUser *buser = [[BmobUser alloc] init];
-    buser.mobilePhoneNumber = self.phoneText.text;
-    buser.password = self.passWord.text;
-    [buser signUpOrLoginInbackgroundWithSMSCode:@"6位验证吗" block:^(BOOL isSuccessful, NSError *error) {
-        if (error) {
-            ZHLog(@"%@",error);
-        }else{
-            BmobUser *user = [BmobUser getCurrentUser];
-            ZHLog(@"%@",user);
-        }
-    }];
-
+//    BmobUser *buser = [[BmobUser alloc] init];
+//    buser.mobilePhoneNumber = self.phoneText.text;
+//    buser.password = self.passWord.text;
+//    [buser signUpOrLoginInbackgroundWithSMSCode:@"6位验证吗" block:^(BOOL isSuccessful, NSError *error) {
+//        if (error) {
+//            ZHLog(@"%@",error);
+//        }else{
+//            BmobUser *user = [BmobUser getCurrentUser];
+//            ZHLog(@"%@",user);
+//        }
+//    }];
+//
 }
-//- (IBAction)send:(id)sender {
-//    
+- (IBAction)send:(id)sender {
+    
 //    [BmobSMS requestSMSCodeInBackgroundWithPhoneNumber:self.phoneText.text andTemplate:@"text" resultBlock:^(int number, NSError *error) {
 //        if (error) {
 //            ZHLog(@"%@",error);
@@ -42,7 +42,7 @@
 //            ZHLog(@"%d",number);
 //        }
 //    }];
-//}
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

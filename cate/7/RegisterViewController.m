@@ -8,7 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "ProgressHUD.h"
-#import <BmobSDK/Bmob.h>
+//#import <BmobSDK/Bmob.h>
 #import "loginViewController.h"
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userTextField;
@@ -46,20 +46,20 @@
         return;
     }
     
-    [ProgressHUD show:@"正在为您注册"];
-    BmobUser *bmUser = [[BmobUser alloc] init];
-    [bmUser setUsername:self.userTextField.text];
-    [bmUser setPassword:self.passwordTextField.text];
-    [bmUser setPassword:self.againPWTextField.text];
-    [bmUser signUpInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
-        if (isSuccessful) {
-            [ProgressHUD showSuccess:@"注册成功"];
-            
-        } else {
-            [ProgressHUD showSuccess:@"注册失败"];
-            
-        }
-    }];
+//    [ProgressHUD show:@"正在为您注册"];
+//    BmobUser *bmUser = [[BmobUser alloc] init];
+//    [bmUser setUsername:self.userTextField.text];
+//    [bmUser setPassword:self.passwordTextField.text];
+//    [bmUser setPassword:self.againPWTextField.text];
+//    [bmUser signUpInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
+//        if (isSuccessful) {
+//            [ProgressHUD showSuccess:@"注册成功"];
+//            
+//        } else {
+//            [ProgressHUD showSuccess:@"注册失败"];
+//            
+//        }
+//    }];
 }
 //注册之前需要判断
 - (BOOL)checkOut {

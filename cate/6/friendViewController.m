@@ -9,7 +9,6 @@
 #import "friendViewController.h"
 #import "friendTableViewCell.h"
 #import "Header.h"
-#import "friendTableViewCell.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "activityViewController.h"
 @interface friendViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -38,6 +37,17 @@
     
     [self.view addSubview:self.tableView];
     [self.tableView registerNib:[UINib nibWithNibName:@"friendTableViewCell" bundle:nil]   forCellReuseIdentifier:@"cell"];
+    
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightBtn.frame = CGRectMake(0, 0, 30, 30);
+    [rightBtn setTitle:@"洛阳市" forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(right:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightbarButtn = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    self.navigationItem.rightBarButtonItem = rightbarButtn;
+
+    
+}
+- (void)right:(UIButton *)btn{
     
 }
 - (void)oneWork{

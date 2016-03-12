@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Second View Controller-->
@@ -17,14 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MoW-sE-ppR">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MoW-sE-ppR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9x-6I-fuE">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9x-6I-fuE">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="des" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McA-as-RrM">
-                                        <rect key="frame" x="60" y="42" width="270" height="65"/>
+                                        <rect key="frame" x="52" y="35" width="270" height="65"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -58,10 +59,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.1403991685" green="0.34616460519999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="v9x-6I-fuE" secondAttribute="trailing" id="XvZ-gh-trH"/>
+                                    <constraint firstItem="v9x-6I-fuE" firstAttribute="leading" secondItem="MoW-sE-ppR" secondAttribute="leading" id="eB5-Wi-qCI"/>
+                                    <constraint firstAttribute="bottom" secondItem="v9x-6I-fuE" secondAttribute="bottom" constant="-20" id="tsb-uH-lB3"/>
+                                    <constraint firstItem="v9x-6I-fuE" firstAttribute="top" secondItem="MoW-sE-ppR" secondAttribute="top" id="zpw-FS-F0N"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="MoW-sE-ppR" secondAttribute="trailing" constant="-20" id="WLb-0q-sX0"/>
+                            <constraint firstItem="MoW-sE-ppR" firstAttribute="top" secondItem="ZnM-mC-IxT" secondAttribute="bottom" constant="-20" id="n61-Ay-qBK"/>
+                            <constraint firstItem="MoW-sE-ppR" firstAttribute="leading" secondItem="DBE-RD-yhv" secondAttribute="leadingMargin" constant="-20" id="q36-qf-HOn"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

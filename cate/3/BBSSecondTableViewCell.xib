@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,29 +15,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="360" height="361"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vI9-wb-iCR">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vI9-wb-iCR">
                         <rect key="frame" x="57" y="24" width="212" height="27"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyh-f7-1fk">
-                        <rect key="frame" x="0.0" y="312" width="188" height="41"/>
-                        <state key="normal" title="动态详情"/>
-                    </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dm3-Gf-0c0">
-                        <rect key="frame" x="264" y="313" width="46" height="40"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPh-LB-Aeo">
-                        <rect key="frame" x="219" y="312" width="45" height="40"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iQ-Tf-HIM">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iQ-Tf-HIM">
                         <rect key="frame" x="8" y="59" width="344" height="245"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9Z-Aw-wgs">
-                        <rect key="frame" x="305" y="313" width="47" height="40"/>
-                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="vI9-wb-iCR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="145-sA-U3p"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0iQ-Tf-HIM" secondAttribute="trailing" id="36O-6t-gBs"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vI9-wb-iCR" secondAttribute="trailing" constant="83" id="4c4-nh-iQ9"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="0iQ-Tf-HIM" secondAttribute="leading" id="ZXf-nw-mmm"/>
+                    <constraint firstItem="vI9-wb-iCR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="49" id="aHE-H3-YiF"/>
+                    <constraint firstItem="0iQ-Tf-HIM" firstAttribute="top" secondItem="vI9-wb-iCR" secondAttribute="bottom" constant="8" id="gBE-iP-rLe"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="largeImage" destination="0iQ-Tf-HIM" id="r1k-XH-Znb"/>

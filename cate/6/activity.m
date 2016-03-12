@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageName;
 @property (weak, nonatomic) IBOutlet UILabel *introduceLable;
 @property (weak, nonatomic) IBOutlet UILabel *timeLable;
-@property (weak, nonatomic) IBOutlet UILabel *distanceLable;
+//@property (weak, nonatomic) IBOutlet UILabel *distanceLable;
 @property (nonatomic, strong)UILabel *activityLable;
 
 
@@ -32,7 +32,7 @@
     self.introduceLable.text = dataDic[@"title"];
    self.timeLable.text = [NSString stringWithFormat:@"%@到%@ %@",dataDic[@"begin_time"],dataDic[@"end_time"],dataDic[@"address"]];
     [self.imageName sd_setImageWithURL:[NSURL URLWithString:dataDic[@"image"]] placeholderImage:nil];
-    self.distanceLable.text = [NSString stringWithFormat:@"%@ %@",dataDic[@"gps"][0],dataDic[@"gps"][1]];
+//    self.distanceLable.text = [NSString stringWithFormat:@"%@ %@",dataDic[@"gps"][0],dataDic[@"gps"][1]];
     CGFloat height = [[self class] getTextHeightWithText:dataDic[@"content"]];
     CGRect frame = self.activityLable.frame;
     frame.size.height = height;
@@ -40,11 +40,11 @@
     
     self.activityLable.text = dataDic[@"content"];
     self.activityLable.numberOfLines = 0;
-    self.mainScroll.contentSize = CGSizeMake(kwidth, 490+_activityLable.frame.size.height);
+    self.mainScroll.contentSize = CGSizeMake(kwidth, 700+_activityLable.frame.size.height);
 }
 - (UILabel *)activityLable{
     if (_activityLable == nil) {
-        self.activityLable = [[UILabel alloc] initWithFrame:CGRectMake(5, 490, kwidth-10, kheight)];
+        self.activityLable = [[UILabel alloc] initWithFrame:CGRectMake(5, 470, kwidth-10, kheight)];
     }
     return _activityLable;
 }

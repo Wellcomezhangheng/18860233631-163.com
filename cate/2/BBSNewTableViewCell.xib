@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,22 +15,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMt-41-RAi">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMt-41-RAi">
                         <rect key="frame" x="15" y="15" width="119" height="34"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5es-gB-xfv">
-                        <rect key="frame" x="277" y="15" width="90" height="90"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4545464" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdI-0i-dSy">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="4545464" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdI-0i-dSy">
                         <rect key="frame" x="15" y="55" width="254" height="50"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5es-gB-xfv">
+                        <rect key="frame" x="277" y="15" width="90" height="90"/>
+                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="MdI-0i-dSy" secondAttribute="trailing" constant="98" id="0y6-RH-xeT"/>
+                    <constraint firstItem="rMt-41-RAi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="5H5-NB-jc7"/>
+                    <constraint firstItem="MdI-0i-dSy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="CcD-L4-55x"/>
+                    <constraint firstItem="MdI-0i-dSy" firstAttribute="top" secondItem="rMt-41-RAi" secondAttribute="bottom" constant="6" id="Cvz-iL-rhP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5es-gB-xfv" secondAttribute="trailing" id="Gwd-6P-hYQ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="MdI-0i-dSy" secondAttribute="bottom" constant="6" id="HHg-iN-bW8"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="5es-gB-xfv" secondAttribute="bottom" constant="6" id="PCe-90-hC9"/>
+                    <constraint firstItem="rMt-41-RAi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="ccN-ij-jsL"/>
+                    <constraint firstItem="5es-gB-xfv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="ch8-Rz-r2m"/>
+                    <constraint firstItem="5es-gB-xfv" firstAttribute="leading" secondItem="MdI-0i-dSy" secondAttribute="trailing" constant="8" id="eci-jd-l3y"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="des" destination="MdI-0i-dSy" id="yHk-ol-SXP"/>

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,19 +15,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0a-y4-PrW">
-                        <rect key="frame" x="0.0" y="0.0" width="65" height="63"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="list_make_out@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="fPR-uh-qaL">
+                        <rect key="frame" x="299" y="27" width="6" height="9"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="list_make_out@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="fPR-uh-qaL">
-                        <rect key="frame" x="295" y="27" width="10" height="9"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSx-EN-fop">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSx-EN-fop">
                         <rect key="frame" x="66" y="0.0" width="209" height="63"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0a-y4-PrW">
+                        <rect key="frame" x="0.0" y="0.0" width="65" height="63"/>
+                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="O0a-y4-PrW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="GID-9d-Tg3"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="O0a-y4-PrW" secondAttribute="bottom" constant="-8" id="K0W-gr-IeM"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="fPR-uh-qaL" secondAttribute="bottom" constant="19" id="VFS-9j-JE9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fPR-uh-qaL" secondAttribute="trailing" constant="7" id="VNw-Re-kTb"/>
+                    <constraint firstItem="hSx-EN-fop" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="d5S-hA-7R5"/>
+                    <constraint firstItem="O0a-y4-PrW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="grY-gb-fDk"/>
+                    <constraint firstItem="hSx-EN-fop" firstAttribute="leading" secondItem="O0a-y4-PrW" secondAttribute="trailing" constant="1" id="jav-nc-lVC"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="hSx-EN-fop" secondAttribute="bottom" constant="-8" id="mOU-6s-aOm"/>
+                    <constraint firstItem="fPR-uh-qaL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="19" id="s3H-HX-ac4"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="iconImage" destination="O0a-y4-PrW" id="I6m-Jf-V7U"/>

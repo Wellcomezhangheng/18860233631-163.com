@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--消息-->
@@ -37,7 +38,7 @@
                                 <rect key="frame" x="0.0" y="215" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="list_make_out@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="eo0-cP-qFM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="list_make_out@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="eo0-cP-qFM">
                                 <rect key="frame" x="339" y="170" width="16" height="15"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdF-z0-Oyh">
@@ -49,7 +50,7 @@
                                     <action selector="btn2:" destination="5HP-qI-HZu" eventType="touchUpInside" id="81I-fa-u2z"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="list_make_out@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="CFB-hZ-Ll3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="list_make_out@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="CFB-hZ-Ll3">
                                 <rect key="frame" x="339" y="94" width="16" height="15"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQc-9l-0mP">
@@ -63,6 +64,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="CFB-hZ-Ll3" secondAttribute="trailing" id="Emc-Ta-Q6J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eo0-cP-qFM" secondAttribute="trailing" id="hMG-bj-6lJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="消息" id="ij6-tA-NEl"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

@@ -14,8 +14,8 @@
 #import "mineViewController.h"
 #import "loginViewController.h"
 #import "WeiboSDK.h"
-//#import <//Bmob.h>
-//#import <BmobMessageSDK/Bmob.h>
+#import <BmobSDK/Bmob.h>
+
 
 @interface WBBaseRequest ()
 - (void)debugPrint;
@@ -87,7 +87,7 @@
     
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kAppKey];
-//    [Bmob registerWithAppKey:kBmob];
+    [Bmob registerWithAppKey:kBmob];
         return YES;
 }
 

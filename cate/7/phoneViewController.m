@@ -8,42 +8,56 @@
 
 #import "phoneViewController.h"
 #import "ProgressHUD.h"
-//#import <BmobSDK/Bmob.h>
+#import <BmobSDK/BmobSMS.h>
 //#import <BmobMessageSDK/Bmob.h>
 @interface phoneViewController ()<UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *phoneText;
-@property (weak, nonatomic) IBOutlet UITextField *verify;
-@property (weak, nonatomic) IBOutlet UITextField *passWord;
-@property (weak, nonatomic) IBOutlet UITextField *againPassWord;
+@property (weak, nonatomic) IBOutlet UITextField *cellPhoneNumberTF;
+@property (weak, nonatomic) IBOutlet UIButton *sureNumberBtn;
+@property (weak, nonatomic) IBOutlet UITextField *sureNumberTF;
+@property (weak, nonatomic) IBOutlet UITextField *passWordTF;
+
+@property (weak, nonatomic) IBOutlet UISwitch *switchp;
 
 @end
 
 @implementation phoneViewController
+//点击完成返回到登陆界面
+
 - (IBAction)registerUser:(id)sender {
-//    BmobUser *buser = [[BmobUser alloc] init];
-//    buser.mobilePhoneNumber = self.phoneText.text;
-//    buser.password = self.passWord.text;
-//    [buser signUpOrLoginInbackgroundWithSMSCode:@"6位验证吗" block:^(BOOL isSuccessful, NSError *error) {
-//        if (error) {
-//            ZHLog(@"%@",error);
-//        }else{
-//            BmobUser *user = [BmobUser getCurrentUser];
-//            ZHLog(@"%@",user);
-//        }
-//    }];
-//
+   
+    [BmobSMS requestSMSCodeInBackgroundWithPhoneNumber:self.cellPhoneNumberTF.text andTemplate:@"test1" resultBlock:^(int number, NSError *error) {
+        if (error) {
+            NSLog(@"%@",error);
+        } else {
+            //获得smsID
+            NSLog(@"sms ID：%d",number);
+        }
+    }];
+    
 }
 - (IBAction)send:(id)sender {
+    //验证
+    [BmobSMS verifySMSCodeInBackgroundWithPhoneNumber:self.cellPhoneNumberTF.text andSMSCode:self.sureNumberTF.text resultBlock:^(BOOL isSuccessful, NSError *error) {
+        if (isSuccessful) {
+            NSLog(@"%@",@"验证成功，可执行用户请求的操作");
+        } else {
+            NSLog(@"%@",error);
+        }
+    }];
     
-//    [BmobSMS requestSMSCodeInBackgroundWithPhoneNumber:self.phoneText.text andTemplate:@"text" resultBlock:^(int number, NSError *error) {
-//        if (error) {
-//            ZHLog(@"%@",error);
-//        }else{
-//            ZHLog(@"%d",number);
-//        }
-//    }];
 }
+   
 
+//密码加密
+- (IBAction)switchSecurity:(id)sender {
+    UISwitch *passSwitch = sender;
+    if (passSwitch.on) {
+        self.passWordTF.secureTextEntry = NO;
+    } else {
+        self.passWordTF.secureTextEntry = YES;
+        
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

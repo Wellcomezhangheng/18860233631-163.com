@@ -15,29 +15,36 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="list_make_out@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="fPR-uh-qaL">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list_make_out@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="fPR-uh-qaL">
                         <rect key="frame" x="299" y="27" width="6" height="9"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="6" id="Zrp-Bs-ZRU"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSx-EN-fop">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSx-EN-fop">
                         <rect key="frame" x="66" y="0.0" width="209" height="63"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0a-y4-PrW">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O0a-y4-PrW">
                         <rect key="frame" x="0.0" y="0.0" width="65" height="63"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="Xhl-ax-Ofx"/>
+                        </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="O0a-y4-PrW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="GID-9d-Tg3"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="O0a-y4-PrW" secondAttribute="bottom" constant="-8" id="K0W-gr-IeM"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="fPR-uh-qaL" secondAttribute="bottom" constant="19" id="VFS-9j-JE9"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="fPR-uh-qaL" secondAttribute="trailing" constant="7" id="VNw-Re-kTb"/>
-                    <constraint firstItem="hSx-EN-fop" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="d5S-hA-7R5"/>
-                    <constraint firstItem="O0a-y4-PrW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="grY-gb-fDk"/>
-                    <constraint firstItem="hSx-EN-fop" firstAttribute="leading" secondItem="O0a-y4-PrW" secondAttribute="trailing" constant="1" id="jav-nc-lVC"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="hSx-EN-fop" secondAttribute="bottom" constant="-8" id="mOU-6s-aOm"/>
-                    <constraint firstItem="fPR-uh-qaL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="19" id="s3H-HX-ac4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="hSx-EN-fop" secondAttribute="trailing" constant="37" id="3tB-Rs-bgM"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="fPR-uh-qaL" secondAttribute="bottom" constant="19" id="CHf-Uh-6jh"/>
+                    <constraint firstItem="O0a-y4-PrW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="D3k-1G-6bA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="hSx-EN-fop" secondAttribute="bottom" constant="-8" id="MvY-us-MRr"/>
+                    <constraint firstItem="fPR-uh-qaL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="19" id="NnS-vc-1AY"/>
+                    <constraint firstItem="hSx-EN-fop" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="RdH-aL-Kqb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="O0a-y4-PrW" secondAttribute="bottom" constant="-8" id="X7K-gO-rcD"/>
+                    <constraint firstItem="hSx-EN-fop" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="58" id="piY-pa-UXQ"/>
+                    <constraint firstItem="O0a-y4-PrW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="s2H-RY-691"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fPR-uh-qaL" secondAttribute="trailing" constant="7" id="sVX-5g-EdY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

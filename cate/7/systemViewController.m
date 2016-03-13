@@ -29,8 +29,17 @@
     self.titleArray = [NSMutableArray arrayWithObjects:@"清除缓存",@"用户反馈",@"给我评分",@"当前版本", nil];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.view addSubview:self.tableView];
-
+    [self head];
 }
+- (void)head{
+    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+    UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(kwidth/2-75, 0, 150, 150)];
+    imageV.image = [UIImage imageNamed:@"ic_avatar_test_bg.png"];
+    [view1 addSubview:imageV];
+    
+    self.tableView.tableHeaderView = view1;
+}
+
 - (void)viewDidAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     //每次图片出现的时候，重新计算图片缓存大小；

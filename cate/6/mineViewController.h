@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface mineViewController : UIViewController
-
+@property (nonatomic, retain)NSString *UID;
+@property (nonatomic, retain)NSString *userName;
 @end

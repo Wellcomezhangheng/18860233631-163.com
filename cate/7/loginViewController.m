@@ -11,6 +11,7 @@
 #import "RegisterViewController.h"
 #import <BmobSDK/Bmob.h>
 #import "ProgressHUD.h"
+#import "mineViewController.h"
 @interface loginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *passWord;
@@ -30,6 +31,15 @@
     [BmobUser loginWithUsernameInBackground:self.userName.text password:self.passWord.text block:^(BmobUser *user, NSError *error) {
         if (user) {
             [ProgressHUD showSuccess:@"登录成功"];
+             self.UID = @"成功";
+            mineViewController *mineNVC = [[mineViewController alloc] init];
+            mineNVC.userName = self.userName.text;
+            mineNVC.UID = self.UID;
+            [self.navigationController pushViewController:mineNVC animated:YES ];
+           
+            
+            
+            
         }
         else{
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有注册此账号，请先完成注册" preferredStyle:UIAlertControllerStyleAlert];

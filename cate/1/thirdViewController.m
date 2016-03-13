@@ -128,6 +128,7 @@
     UIStoryboard *BBSs = [UIStoryboard storyboardWithName:@"BBSsecond" bundle:nil];
     
     BBSSecondViewController *bbs = BBSs.instantiateInitialViewController;
+//    BBSSecondViewController *bbs = [[BBSSecondViewController alloc] init];
     bbs.channelid = model.channelId;
     //    bbs.imagee = model.imagee;
     [self.navigationController pushViewController:bbs animated:YES];

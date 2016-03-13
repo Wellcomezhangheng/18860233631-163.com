@@ -10,5 +10,5 @@
 
 @interface loginViewController : UIViewController
 - (IBAction)weibo:(id)sender;
-
+@property (nonatomic, retain)NSString *UID;
 @end

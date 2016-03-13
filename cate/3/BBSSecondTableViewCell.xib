@@ -21,17 +21,18 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iQ-Tf-HIM">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iQ-Tf-HIM">
                         <rect key="frame" x="8" y="59" width="344" height="245"/>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="vI9-wb-iCR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="145-sA-U3p"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="0iQ-Tf-HIM" secondAttribute="trailing" id="36O-6t-gBs"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="vI9-wb-iCR" secondAttribute="trailing" constant="83" id="4c4-nh-iQ9"/>
-                    <constraint firstAttribute="leadingMargin" secondItem="0iQ-Tf-HIM" secondAttribute="leading" id="ZXf-nw-mmm"/>
-                    <constraint firstItem="vI9-wb-iCR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="49" id="aHE-H3-YiF"/>
-                    <constraint firstItem="0iQ-Tf-HIM" firstAttribute="top" secondItem="vI9-wb-iCR" secondAttribute="bottom" constant="8" id="gBE-iP-rLe"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="0iQ-Tf-HIM" secondAttribute="leading" id="Qbh-vz-anu"/>
+                    <constraint firstItem="vI9-wb-iCR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="49" id="Yff-eG-1ZL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0iQ-Tf-HIM" secondAttribute="trailing" id="aPg-0r-Kmb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vI9-wb-iCR" secondAttribute="trailing" constant="83" id="l5t-ea-LiT"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="0iQ-Tf-HIM" secondAttribute="bottom" constant="49" id="lif-ag-OOa"/>
+                    <constraint firstItem="0iQ-Tf-HIM" firstAttribute="top" secondItem="vI9-wb-iCR" secondAttribute="bottom" constant="8" id="rMd-Rn-XAY"/>
+                    <constraint firstItem="vI9-wb-iCR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="v1E-hE-tmg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

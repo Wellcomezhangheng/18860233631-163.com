@@ -15,17 +15,13 @@
 #import "VOSegmentedControl.h"
 #import "PersonViewController.h"
 #import "dynamicViewController.h"
+#import "BBSSecondView.h"
 @interface BBSSecondViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) VOSegmentedControl *segementedControl;
 @property (nonatomic, strong) VOSegmentedControl *segementedControl1;
 @property (nonatomic, strong)UITableView *tableView;
 
-@property (weak, nonatomic) IBOutlet UIView *headView;
-@property (weak, nonatomic) IBOutlet UIImageView *headImage;
-@property (weak, nonatomic) IBOutlet UILabel *des;
-@property (weak, nonatomic) IBOutlet UILabel *biaoti;
-@property (weak, nonatomic) IBOutlet UILabel *renqi;
-@property (weak, nonatomic) IBOutlet UILabel *neirong;
+@property (nonatomic, strong) BBSSecondView *headView;
 @property (nonatomic, strong) NSMutableArray *array;
 @property (nonatomic, strong) NSMutableDictionary *dictionary;
 @property (nonatomic, strong) NSMutableArray *textArray;
@@ -42,17 +38,21 @@
     //请求头部标题
     [self workOne];
     [self workTwo];
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kwidth, kheight) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kwidth, kheight - 64) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.tableHeaderView = self.headView;
+    self.tableView.backgroundColor = [UIColor redColor];
 //    self.tableView.rowHeight = 395;
         [self.tableView registerNib:[UINib nibWithNibName:@"BBSSecondTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     
     [self.view addSubview:self.tableView];
     
+    self.headView = [[[NSBundle mainBundle] loadNibNamed:@"BBSSecondView" owner:nil options:nil] lastObject];
+    self.headView.frame = CGRectMake(0, 0, kwidth, 180);
+    self.tableView.tableHeaderView = self.headView;
    
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.nameArray.count;
 }
@@ -98,13 +98,13 @@
        NSArray *data = dic[@"data"];
         if ([message isEqualToString:@"操作成功"]) {
             self.dictionary = data[0];
-           self.des.text = self.dictionary[@"des"];
+           self.headView.des.text = self.dictionary[@"des"];
             NSString *ima = self.dictionary[@"background"];
             NSString *ima2 = [ima stringByReplacingOccurrencesOfString:@"@700w_400h_20-10bl.webp" withString:@"@720w_518h_1e_1c.jpg"];
-            [self.headImage sd_setImageWithURL:[NSURL URLWithString:ima2] placeholderImage:nil];
-            self.renqi.text = [NSString stringWithFormat:@"人气:%@",_dictionary[@"follower_count"]];
-            self.neirong.text = [NSString stringWithFormat:@"内容:%@",_dictionary[@"moment_count"]];
-            self.biaoti.text = self.dictionary[@"subject"];
+            [self.headView.headImage sd_setImageWithURL:[NSURL URLWithString:ima2] placeholderImage:nil];
+            self.headView.renqi.text = [NSString stringWithFormat:@"人气:%@",_dictionary[@"follower_count"]];
+            self.headView.neirong.text = [NSString stringWithFormat:@"内容:%@",_dictionary[@"moment_count"]];
+            self.headView.biaoti.text = self.dictionary[@"subject"];
                         }
                  [self.tableView reloadData];
 

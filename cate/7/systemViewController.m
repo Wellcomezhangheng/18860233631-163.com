@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.titleArray = [NSMutableArray arrayWithObjects:@"清除缓存",@"用户反馈",@"给我评分",@"当前版本", nil];
+    self.titleArray = [NSMutableArray arrayWithObjects:@"清除缓存",@"用户反馈",@"给我评分", nil];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.view addSubview:self.tableView];
     [self head];
@@ -122,9 +122,7 @@
     // 关闭邮件发送视图
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (void)checkAppVersion{
-    [ProgressHUD showSuccess:@"当前已是最新版本"];
-}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.row) {
@@ -154,14 +152,7 @@
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         }
             break;
-        case 3:
-        {
-            //检测当前版本
-            [ProgressHUD show:@"正在为您检测中"];
-            [self performSelector:@selector(checkAppVersion) withObject:nil afterDelay:2.0];
-        }
-            break;
-      
+            
         default:
             break;
     }
